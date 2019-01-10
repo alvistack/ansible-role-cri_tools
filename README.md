@@ -1,2 +1,37 @@
-# ansible-role-cri-tools
-Ansible Role for CRI Tools Installation
+# Ansible Role for cri-tools
+
+[![Travis](https://img.shields.io/travis/alvistack/ansible-role-cri-tools.svg)](https://travis-ci.org/alvistack/ansible-role-cri-tools)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-cri-tools.svg)](https://github.com/alvistack/ansible-role-cri-tools)
+[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-cri-tools.svg)](https://github.com/alvistack/ansible-role-cri-tools/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.cri_tools-blue.svg)](https://galaxy.ansible.com/alvistack/cri_tools)
+
+Ansible Role for cri-tools Installation.
+
+## Requirements
+
+This role require Ansible 2.6 or higher.
+
+This role was designed for Ubuntu 16.04/18.04 or RHEL/CentOS 7.
+
+## Role Variables
+
+[defaults/main.yml](defaults/main.yml)
+
+## Dependencies
+
+[meta/main.yml](meta/main.yml)
+
+## Example Playbook
+
+[tests/test.yml](tests/test.yml)
+
+## License
+
+  - Code released under [Apache License 2.0](LICENSE)
+  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+
+## Author Information
+
+  - Wong Hoi Sing Edison
+      - <https://twitter.com/hswong3i>
+      - <https://github.com/hswong3i>
