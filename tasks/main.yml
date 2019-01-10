@@ -44,6 +44,17 @@
     loop_var: "loop_var"
   tags: cri_tools
 
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  with_items:
+    - { dest: "/usr/local/bin" }
+  tags: cri_tools
+
 - name: download and unarchive
   unarchive:
     src: "{{ crictl_download_url }}"
@@ -54,4 +65,15 @@
     mode: "0755"
   register: result
   until: result is succeeded
+  tags: cri_tools
+
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  with_items:
+    - { dest: "/usr/local/bin/crictl", mode: "0755" }
   tags: cri_tools
