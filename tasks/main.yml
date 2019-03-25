@@ -55,16 +55,25 @@
     - { dest: "/usr/local/bin" }
   tags: cri_tools
 
-- name: download and unarchive
+- name: download archive
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    checksum: "{{ item.checksum }}"
+  with_items:
+    - "{{ crictl_download }}"
+  register: result
+  until: result is succeeded
+  tags: cri_tools
+
+- name: unarchive package
   unarchive:
-    src: "{{ crictl_download_url }}"
+    src: "{{ crictl_download.dest }}"
     dest: "/usr/local/bin"
     remote_src: true
     owner: "root"
     group: "root"
     mode: "0755"
-  register: result
-  until: result is succeeded
   tags: cri_tools
 
 - name: prepare files
