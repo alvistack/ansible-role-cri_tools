@@ -74,8 +74,6 @@
     owner: "root"
     group: "root"
     mode: "0755"
-  register: result
-  until: result is succeeded
   tags: cri_tools
 
 - name: prepare files
