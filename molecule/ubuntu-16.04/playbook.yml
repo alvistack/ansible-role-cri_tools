@@ -16,11 +16,13 @@
 
 - hosts: all
   remote_user: root
+  become: true
   roles:
     - role: cri-tools
 
 - hosts: all
   remote_user: root
+  become: true
   tasks:
     - name: crictl --version
       command: crictl --version
