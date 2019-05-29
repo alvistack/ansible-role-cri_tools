@@ -14,9 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# URL for download cri-tools binary.
+# cri-tools version.
 crictl_version: "v1.14.0"
-crictl_download:
-  url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ crictl_version }}/crictl-{{ crictl_version }}-linux-amd64.tar.gz"
-  dest: "/tmp/crictl-{{ crictl_version }}-linux-amd64.tar.gz"
-  checksum: "sha1:425d2b713cce726e3beecf9b3002111ffa06b6cb"
+
+# cri-tools download details.
+crictl_download: "{{ _crictl_download[crictl_version] }}"
