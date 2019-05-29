@@ -13,3 +13,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+_crictl_download:
+  v1.14.0:
+    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.14.0/crictl-v1.14.0-linux-amd64.tar.gz"
+    dest: "/tmp/crictl-v1.14.0-linux-amd64.tar.gz"
+    checksum: "sha1:425d2b713cce726e3beecf9b3002111ffa06b6cb"
+  v1.13.0:
+    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.13.0/crictl-v1.13.0-linux-amd64.tar.gz"
+    dest: "/tmp/crictl-v1.13.0-linux-amd64.tar.gz"
+    checksum: "sha1:2a9034306f4b13018382bd4ffd1601af0f34b9f7"
+  v1.12.0:
+    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.12.0/crictl-v1.12.0-linux-amd64.tar.gz"
+    dest: "/tmp/crictl-v1.12.0-linux-amd64.tar.gz"
+    checksum: "sha1:45a9c65cc52a13e76e07fbc64ddcf3b646cd8c82"
