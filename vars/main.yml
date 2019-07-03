@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _crictl_download:
+  v1.15.0:
+    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.15.0/crictl-v1.15.0-linux-amd64.tar.gz"
+    dest: "/tmp/crictl-v1.15.0-linux-amd64.tar.gz"
+    checksum: "sha1:dad6254879664180f5416d02f5d864fdf5c5a42e"
   v1.14.0:
     url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.14.0/crictl-v1.14.0-linux-amd64.tar.gz"
     dest: "/tmp/crictl-v1.14.0-linux-amd64.tar.gz"
