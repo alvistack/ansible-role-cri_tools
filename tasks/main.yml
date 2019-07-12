@@ -57,6 +57,7 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/usr/local/bin" }
+    - { dest: "{{ crictl_download.dest | dirname }}" }
   tags: cri_tools
 
 - name: download archive
