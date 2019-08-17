@@ -67,8 +67,8 @@
     checksum: "{{ item.checksum }}"
   loop:
     - "{{ crictl_download }}"
-  register: result
-  until: result is succeeded
+  register: get_url_result
+  until: get_url_result is succeeded
   tags: cri_tools
 
 - name: unarchive package
@@ -79,6 +79,7 @@
     owner: "root"
     group: "root"
     mode: "0755"
+  when: get_url_result is changed
   tags: cri_tools
 
 - name: prepare files
