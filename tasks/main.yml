@@ -75,7 +75,7 @@
   shell: |
     set -o pipefail
     cd /usr/local/bin
-    TMP_DIR="`mktemp -d`" && tar zxf {{ crictl_download.dest }} -C $TMP_DIR && mv $TMP_DIR/crictl . && rm -rf $TMP_DIR
+    TMP_DIR="`mktemp -d`" && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} && mv $TMP_DIR/crictl . && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
