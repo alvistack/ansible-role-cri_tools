@@ -67,18 +67,18 @@
     checksum: "{{ item.checksum }}"
   loop:
     - "{{ crictl_download }}"
-  register: result
-  until: result is succeeded
+  register: get_url_result
+  until: get_url_result is succeeded
   tags: cri_tools
 
 - name: unarchive package
-  unarchive:
-    src: "{{ crictl_download.dest }}"
-    dest: "/usr/local/bin"
-    remote_src: true
-    owner: "root"
-    group: "root"
-    mode: "0755"
+  shell: |
+    set -o pipefail
+    cd /usr/local/bin
+    TMP_DIR="`mktemp -d`" && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} && mv $TMP_DIR/crictl . && rm -rf $TMP_DIR
+  args:
+    executable: "/bin/bash"
+  when: get_url_result is changed
   tags: cri_tools
 
 - name: prepare files
