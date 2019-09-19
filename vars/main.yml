@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _crictl_download:
+  v1.16.0:
+    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.16.0/crictl-v1.16.0-linux-amd64.tar.gz"
+    dest: "/var/cache/ansible/crictl-v1.16.0-linux-amd64.tar.gz"
+    checksum: "sha1:35b70c768e762baebb2daabc8189e7ba06543fef"
   v1.15.0:
     url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.15.0/crictl-v1.15.0-linux-amd64.tar.gz"
     dest: "/var/cache/ansible/crictl-v1.15.0-linux-amd64.tar.gz"
