@@ -78,7 +78,7 @@
     cd /usr/local/bin
     TMP_DIR="`mktemp -d`" \
       && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} \
-      && chown -Rf root:root $TMP_DIR/crictl \
+      && chown root:root $TMP_DIR/crictl \
       && chmod 0755 $TMP_DIR/crictl \
       && mv $TMP_DIR/crictl . \
       && rm -rf $TMP_DIR
