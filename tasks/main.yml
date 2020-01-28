@@ -80,6 +80,8 @@
       && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} \
       && mv $TMP_DIR/crictl . \
       && rm -rf $TMP_DIR
+    chown -Rf root:root /usr/local/bin/crictl
+    chmod 0755 /usr/local/bin/crictl
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
