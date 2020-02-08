@@ -18,6 +18,7 @@
   remote_user: root
   become: true
   roles:
+    - role: python
     - role: cri-tools
 
 - hosts: all

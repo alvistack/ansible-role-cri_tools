@@ -14,20 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  become: true
-  roles:
-    - role: python
-    - role: cri-tools
-
-- hosts: all
-  remote_user: root
-  become: true
-  tasks:
-    - name: crictl --version
-      environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      command: crictl --version
-      register: result
-      changed_when: result is not succeeded
+- name: python
+  src: https://github.com/alvistack/ansible-role-python
+  version: develop
