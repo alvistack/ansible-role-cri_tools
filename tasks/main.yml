@@ -16,7 +16,7 @@
 
 - name: include default variables
   include_vars: "../vars/main.yml"
-  tags: cri_tools
+  tags: crictl
 
 - name: include release specific variables
   include_vars: "{{ lookup('first_found', _params) }}"
@@ -31,7 +31,7 @@
       paths:
         - "../vars"
   ignore_errors: true
-  tags: cri_tools
+  tags: crictl
 
 - name: include release specific tasks
   include_tasks: "{{ lookup('first_found', _params) }}"
@@ -46,7 +46,7 @@
       paths:
         - "."
   ignore_errors: true
-  tags: cri_tools
+  tags: crictl
 
 - name: prepare directories
   file:
@@ -58,7 +58,7 @@
   loop:
     - { dest: "/usr/local/bin" }
     - { dest: "{{ crictl_download.dest | dirname }}" }
-  tags: cri_tools
+  tags: crictl
 
 - name: download archive
   vars:
@@ -72,7 +72,7 @@
     - "{{ crictl_download }}"
   register: get_url_result
   until: get_url_result is succeeded
-  tags: cri_tools
+  tags: crictl
 
 - name: unarchive package
   shell: |
@@ -87,7 +87,7 @@
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
-  tags: cri_tools
+  tags: crictl
 
 - name: prepare files
   file:
@@ -98,4 +98,4 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "/usr/local/bin/crictl", mode: "0755" }
-  tags: cri_tools
+  tags: crictl
