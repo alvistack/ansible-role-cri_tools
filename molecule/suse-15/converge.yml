@@ -19,4 +19,4 @@
   become: true
   roles:
     - role: python
-    - role: crictl
+    - role: cri_tools

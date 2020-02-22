@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# crictl version.
+# CRI Tools version.
 crictl_version: "v1.17.0"
 
-# crictl download details.
+# CRI Tools download details.
 crictl_download: "{{ _crictl_download[crictl_version] }}"
