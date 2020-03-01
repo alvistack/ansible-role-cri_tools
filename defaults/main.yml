@@ -19,3 +19,6 @@ crictl_version: "v1.17.0"
 
 # CRI Tools download details.
 crictl_download: "{{ _crictl_download[crictl_version] }}"
+
+# Endpoint of CRI container runtime service
+crictl_runtime_endpoint: "unix:///var/run/dockershim.sock"

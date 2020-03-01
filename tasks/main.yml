@@ -103,6 +103,17 @@
   changed_when: result is not succeeded
   tags: cti_tools
 
+- name: copy templates
+  template:
+    dest: "{{ item.dest }}"
+    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  loop:
+    - { dest: "/etc/crictl.yaml" }
+  tags: cti_tools
+
 - name: prepare files
   file:
     dest: "{{ item.dest }}"
@@ -112,5 +123,6 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "/etc/bash_completion.d/crictl" }
+    - { dest: "/etc/crictl.yaml" }
     - { dest: "/usr/local/bin/crictl", mode: "0755" }
   tags: cri_tools
