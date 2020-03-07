@@ -101,7 +101,7 @@
     creates: "/etc/bash_completion.d/crictl"
   register: result
   changed_when: result is not succeeded
-  tags: cti_tools
+  tags: cri_tools
 
 - name: copy templates
   template:
@@ -112,7 +112,7 @@
     mode: "{{ item.mode | default('0644') }}"
   loop:
     - { dest: "/etc/crictl.yaml" }
-  tags: cti_tools
+  tags: cri_tools
 
 - name: prepare files
   file:
