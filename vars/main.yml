@@ -15,15 +15,11 @@
 # limitations under the License.
 
 _crictl_download:
+  v1.18.0:
+    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.18.0/crictl-v1.18.0-linux-amd64.tar.gz"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/crictl-v1.18.0-linux-amd64.tar.gz"
+    checksum: "sha1:f384f594bd0a7e558a827363f54f58b45e670075"
   v1.17.0:
     url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.17.0/crictl-v1.17.0-linux-amd64.tar.gz"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/crictl-v1.17.0-linux-amd64.tar.gz"
     checksum: "sha1:41116457c34da51e5df8de6ae8404889c4c7080a"
-  v1.16.1:
-    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.16.1/crictl-v1.16.1-linux-amd64.tar.gz"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/crictl-v1.16.1-linux-amd64.tar.gz"
-    checksum: "sha1:c1c52d08fdb6d0c35441e3f51b16f980e8046d3e"
-  v1.16.0:
-    url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.16.0/crictl-v1.16.0-linux-amd64.tar.gz"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/crictl-v1.16.0-linux-amd64.tar.gz"
-    checksum: "sha1:35b70c768e762baebb2daabc8189e7ba06543fef"
