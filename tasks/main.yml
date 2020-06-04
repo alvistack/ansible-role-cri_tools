@@ -98,9 +98,8 @@
     crictl completion > /etc/bash_completion.d/crictl
   args:
     executable: "/bin/bash"
-    creates: "/etc/bash_completion.d/crictl"
-  register: result
-  changed_when: result is not succeeded
+  changed_when: false
+  ignore_errors: true
   tags: cri_tools
 
 - name: copy templates
