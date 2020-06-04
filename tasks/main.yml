@@ -98,7 +98,8 @@
     crictl completion > /etc/bash_completion.d/crictl
   args:
     executable: "/bin/bash"
-  when: get_url_result is changed
+  changed_when: false
+  ignore_errors: true
   tags: cri_tools
 
 - name: copy templates
