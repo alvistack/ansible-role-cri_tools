@@ -1,7 +1,7 @@
 # Ansible Role for CRI Tools
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-cri_tools.svg)](https://travis-ci.com/alvistack/ansible-role-cri_tools)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-cri_tools.svg)](https://github.com/alvistack/ansible-role-cri_tools)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-cri_tools.svg)](https://github.com/alvistack/ansible-role-cri_tools/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-cri_tools.svg)](https://github.com/alvistack/ansible-role-cri_tools/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.cri_tools-blue.svg)](https://galaxy.ansible.com/alvistack/cri_tools)
 
