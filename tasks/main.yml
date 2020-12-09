@@ -73,7 +73,7 @@
 
 - name: unarchive package
   shell: |
-    set -o pipefail
+    set -euo pipefail
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
       && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} \
@@ -89,7 +89,7 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -o pipefail
+    set -euo pipefail
     crictl completion > /etc/bash_completion.d/crictl
   args:
     executable: "/bin/bash"
