@@ -56,6 +56,7 @@
     - { dest: "/etc/bash_completion.d" }
     - { dest: "/usr/local/bin" }
     - { dest: "{{ crictl_download.dest | dirname }}" }
+  register: file_result
 
 - name: download archive
   vars:
@@ -68,12 +69,14 @@
     timeout: 300
   loop:
     - "{{ crictl_download }}"
+  when: file_result is changed
   register: get_url_result
   until: get_url_result is succeeded
 
 - name: unarchive package
   shell: |
     set -euo pipefail
+    exec &> >(tee -a {{ crictl_download.dest }}.log)
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
       && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} \
@@ -83,7 +86,7 @@
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
-  when: get_url_result is changed
+    creates: "{{ crictl_download.dest }}.log"
 
 - name: install bash completion
   environment:
