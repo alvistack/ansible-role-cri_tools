@@ -16,3 +16,4 @@
 
 _yum:
   - { state: "latest", name: "bash-completion" }
+  - { state: "latest", name: "tar" }
