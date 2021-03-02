@@ -16,4 +16,3 @@
 
 _apt:
   - { state: "latest", name: "bash-completion" }
-  - { state: "latest", name: "tar" }
