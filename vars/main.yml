@@ -18,12 +18,12 @@ _crictl_download:
   "v1.20.0":
     url: "http://github.com/kubernetes-sigs/cri-tools/releases/download/v1.20.0/crictl-v1.20.0-linux-amd64.tar.gz"
     dest: "/var/cache/ansible/44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c/crictl-v1.20.0-linux-amd64.tar.gz"
-    checksum: "sha256:44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c"
+    sha256sum: "44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c"
   "v1.19.0":
     url: "http://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-amd64.tar.gz"
     dest: "/var/cache/ansible/87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae/crictl-v1.19.0-linux-amd64.tar.gz"
-    checksum: "sha256:87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae"
+    sha256sum: "87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae"
   "v1.18.0":
     url: "http://github.com/kubernetes-sigs/cri-tools/releases/download/v1.18.0/crictl-v1.18.0-linux-amd64.tar.gz"
     dest: "/var/cache/ansible/876dd2b3d0d1c2590371f940fb1bf1fbd5f15aebfbe456703ee465d959700f4a/crictl-v1.18.0-linux-amd64.tar.gz"
-    checksum: "sha256:876dd2b3d0d1c2590371f940fb1bf1fbd5f15aebfbe456703ee465d959700f4a"
+    sha256sum: "876dd2b3d0d1c2590371f940fb1bf1fbd5f15aebfbe456703ee465d959700f4a"
