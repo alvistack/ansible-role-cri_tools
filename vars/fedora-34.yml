@@ -14,4 +14,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-crictl_version: "v1.20.0"
+_yum:
+  - { state: "latest", name: "bash-completion" }
