@@ -14,11 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Kubernetes version.
-kubernetes_version: "v1.20.7"
+# Kubernetes release.
+kubernetes_release: "v1.20"
 
 # CRI Tools version.
-crictl_version: "{{ _crictl_version[kubernetes_version] }}"
+crictl_version: "{{ _crictl_version[kubernetes_release] }}"
 
 # CRI Tools download details.
 crictl_download: "{{ _crictl_download[crictl_version] }}"
