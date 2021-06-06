@@ -22,13 +22,13 @@ _crictl_version:
 _crictl_download:
   "v1.21.0":
     url: "http://github.com/kubernetes-sigs/cri-tools/releases/download/v1.21.0/crictl-v1.21.0-linux-amd64.tar.gz"
-    dest: "/var/cache/ansible/85c78a35584971625bf1c3bcd46e5404a90396f979d7586f18b11119cb623e24/crictl-v1.21.0-linux-amd64.tar.gz"
-    sha256sum: "85c78a35584971625bf1c3bcd46e5404a90396f979d7586f18b11119cb623e24"
+    dest: "/tmp/85c78a35584971625bf1c3bcd46e5404a90396f979d7586f18b11119cb623e24/crictl-v1.21.0-linux-amd64.tar.gz"
+    checksum: "85c78a35584971625bf1c3bcd46e5404a90396f979d7586f18b11119cb623e24"
   "v1.20.0":
     url: "http://github.com/kubernetes-sigs/cri-tools/releases/download/v1.20.0/crictl-v1.20.0-linux-amd64.tar.gz"
-    dest: "/var/cache/ansible/44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c/crictl-v1.20.0-linux-amd64.tar.gz"
-    sha256sum: "44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c"
+    dest: "/tmp/44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c/crictl-v1.20.0-linux-amd64.tar.gz"
+    checksum: "44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c"
   "v1.19.0":
     url: "http://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-amd64.tar.gz"
-    dest: "/var/cache/ansible/87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae/crictl-v1.19.0-linux-amd64.tar.gz"
-    sha256sum: "87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae"
+    dest: "/tmp/87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae/crictl-v1.19.0-linux-amd64.tar.gz"
+    checksum: "87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae"
