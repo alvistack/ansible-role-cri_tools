@@ -66,28 +66,28 @@
 
 - name: download archive
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
+    mkdir -p /var/log/ansible
+    exec &> >(tee -a /var/log/ansible/{{ crictl_download.checksum }}-get_url.log)
     TMP_DIR="$(mktemp -d)" \
       && cd $TMP_DIR \
-      && mkdir -p .{{ item.dest | dirname }} \
-      && curl -skL -m 300 {{ item.url }} > .{{ item.dest }} \
-      && echo -n "{{ item.checksum }} .{{ item.dest }}" | sha256sum -c - \
-      && mkdir -p {{ item.dest | dirname }} \
-      && mv .{{ item.dest }} {{ item.dest }} \
+      && mkdir -p .{{ crictl_download.dest | dirname }} \
+      && curl -skL -m 300 {{ crictl_download.url }} > .{{ crictl_download.dest }} \
+      && echo -n "{{ crictl_download.checksum }} .{{ crictl_download.dest }}" | sha256sum -c - \
+      && mkdir -p {{ crictl_download.dest | dirname }} \
+      && mv .{{ crictl_download.dest }} {{ crictl_download.dest }} \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
-    creates: "{{ item.dest | dirname }}"
-  loop:
-    - "{{ crictl_download }}"
+    creates: "/var/log/ansible/{{ crictl_download.checksum }}-get_url.log"
   register: result
   until: result is succeeded
 
 - name: unarchive package
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     mkdir -p /var/log/ansible
-    exec &> >(tee -a /var/log/ansible/{{ crictl_download.checksum }}.log)
+    exec &> >(tee -a /var/log/ansible/{{ crictl_download.checksum }}-unarchive.log)
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
       && tar -zx -C $TMP_DIR -f {{ crictl_download.dest }} \
@@ -97,13 +97,13 @@
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ crictl_download.checksum }}.log"
+    creates: "/var/log/ansible/{{ crictl_download.checksum }}-unarchive.log"
 
 - name: install bash completion
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     crictl completion > /etc/bash_completion.d/crictl
   args:
     executable: "/bin/bash"
