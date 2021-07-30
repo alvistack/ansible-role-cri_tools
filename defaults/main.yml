@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # Kubernetes release.
-kube_release: "1.21"
+kube_release: "{{ _kube_release }}"
 
 # CRI Tools version.
 crictl_version: "{{ _crictl_version[kube_release] }}"
