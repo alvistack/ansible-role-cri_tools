@@ -29,9 +29,9 @@
   until: result is succeeded
 
 - name: zypper removelock
-  command: zypper removelock {{ item.name | regex_replace('.' + crictl_version + '.*', '') }}
+  command: zypper removelock {{ item.name | regex_replace('^(.*)-[0-9]*:*[0-9]+\..*$', '\1-*') }}
   loop: "{{ _zypper }}"
-  when: crictl_version in item.name
+  when: item.state == "present"
   changed_when: false
   failed_when: false
 
@@ -47,8 +47,8 @@
   until: result is succeeded
 
 - name: zypper addlock
-  command: zypper addlock {{ item.name | regex_replace('.' + crictl_version + '.*', '') }}
+  command: zypper addlock {{ item.name | regex_replace('^(.*)-[0-9]*:*[0-9]+\..*$', '\1-*') }}
   loop: "{{ _zypper }}"
-  when: crictl_version in item.name
+  when: item.state == "present"
   changed_when: false
   failed_when: false
