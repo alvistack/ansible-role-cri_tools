@@ -34,7 +34,7 @@
 
 - name: apt-mark unhold
   dpkg_selections:
-    name: "{{ item.name | regex_replace('.' + crictl_version + '.*', '') }}"
+    name: "{{ item.name | regex_replace('=[0-9:]*' + crictl_version + '.*', '') }}"
     selection: "install"
   loop: "{{ _apt }}"
   when: crictl_version in item.name
@@ -51,7 +51,7 @@
 
 - name: apt-mark hold
   dpkg_selections:
-    name: "{{ item.name | regex_replace('.' + crictl_version + '.*', '') }}"
+    name: "{{ item.name | regex_replace('=[0-9:]*' + crictl_version + '.*', '') }}"
     selection: "hold"
   loop: "{{ _apt }}"
   when: crictl_version in item.name
