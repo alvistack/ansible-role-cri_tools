@@ -26,4 +26,4 @@ _apt_repository:
     state: "present"
 
 _apt:
-  - { state: "present", name: "cri-tools=100:{{ crictl_version }}-*" }
+  - { state: "present", name: "cri-tools=100:{{ crictl_version }}*" }
