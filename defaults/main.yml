@@ -19,9 +19,3 @@ kube_release: "{{ _kube_release }}"
 
 # CRI Tools version.
 crictl_version: "{{ _crictl_version[kube_release] }}"
-
-# CRI Tools download details.
-crictl_download: "{{ _crictl_download[crictl_version] }}"
-
-# Endpoint of CRI container runtime service
-crictl_runtime_endpoint: "unix:///var/run/crio/crio.sock"
