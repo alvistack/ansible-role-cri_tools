@@ -21,6 +21,6 @@
     - name: crictl --version
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      command: crictl --version
+      ansible.builtin.command: crictl --version
       register: result
       changed_when: result is not succeeded
