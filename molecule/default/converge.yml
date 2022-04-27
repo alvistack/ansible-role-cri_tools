@@ -20,5 +20,5 @@
   tasks:
     - name: include role
       ansible.builtin.include_role:
-        name: cri_tools
-      tags: cri_tools
+        name: alvistack.cri_tools
+      tags: alvistack.cri_tools
