@@ -17,6 +17,7 @@
 galaxy_info:
   standalone: true
   role_name: cri_tools
+  namespace: alvistack
   author: "Wong Hoi Sing Edison <hswong3i@pantarei-design.com>"
   description: Ansible Role for CRI Tools Installation
   company: PantaRei Design
