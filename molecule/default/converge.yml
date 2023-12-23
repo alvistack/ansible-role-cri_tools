@@ -22,4 +22,3 @@
     - name: include role
       ansible.builtin.include_role:
         name: alvistack.cri_tools
-      tags: alvistack.cri_tools
