@@ -16,22 +16,16 @@
 
 _kube_release: "1.31"
 
-_rpm_key:
-  - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/AlmaLinux_8/repodata/repomd.xml.key
-    fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+_apt_key:
+  - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
+    url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+    id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
     state: present
 
-_yum_repository:
-  - file: home:alvistack
-    name: home_alvistack
-    description: home:alvistack (AlmaLinux_8)
-    baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/AlmaLinux_8
-    enabled: true
-    priority: "2"
-    module_hotfixes: true
-    gpgcheck: true
-    gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/AlmaLinux_8/repodata/repomd.xml.key
+_apt_repository:
+  - filename: home:alvistack
+    repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
     state: present
 
-_yum:
-  - { state: present, name: "cri-tools-100:{{ crictl_version }}*" }
+_apt:
+  - { state: present, name: "cri-tools=100:{{ crictl_version }}*" }
