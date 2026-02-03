@@ -14,22 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_kube_release: "1.35"
-
-_apt_key:
-  - url: https://download.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
-    dest: /etc/apt/keyrings/home-alvistack.asc
-    checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
-
-_deb822_repository:
-  - name: home-alvistack
-    types: deb
-    uris: https://download.opensuse.org/repositories/home:/alvistack/Debian_Testing
-    suites: /
-    components:
-    signed_by: /etc/apt/keyrings/home-alvistack.asc
-    enabled: true
-    state: present
-
-_apt:
-  - { state: present, name: "cri-tools=100:{{ crictl_version }}*" }
+kube_release: "1.35"
