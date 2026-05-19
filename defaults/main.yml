@@ -18,4 +18,4 @@
 kube_release: "{{ _kube_release }}"
 
 # CRI Tools version.
-crictl_version: "{{ _crictl_version[kube_release] }}"
+crictl_version: "{{ _crictl_version }}"
